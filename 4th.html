@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Workout Plan</title>
+  <link rel="stylesheet" href="pbl0final.css">
+</head>
+<style>
+   
+</style>
+<body>
+ 
+    <section class="navigation w3-metro-light-blue w3-container" >
+      <button onclick="goToTop()" id="back-to-top" title="Go to top"><i class="fa fa-toggle-up"></i></button>
+      <nav class="nav-container">
+        <div class="logo w3-padding-large">
+          <img class="small-image" src="newlpogo.jpg.png" >
+        </div>
+  
+  
+        <div class="mobile-button"  style="color: white;">
+          <span style="float: right;" onclick="toggleMobileNavigation()">&#9776;</span>
+        </div>
+        <div class="links">
+  
+          <a href="pbl0ofinal.html"> MAIN PAGE</a>
+          <a href="pblofinalpage2-a.html">WORKOUT PLAN-</a>
+          <a href="pblofinal3.html">GYMLOCATE-</a>
+          <a href="pblofinalpage4.html"> MADE BY</a>
+  
+        </div>
+  
+        <div id="mobile-sidenav" class="mobile-links w3-sand">
+          <a href="javascript:void(0)" class="closebtn w3-round" onclick="toggleMobileNavigation()">&times;</a>
+          <a href="#about" onclick="toggleMobileNavigation()">ABOUT</a>
+          <a href="#consulting" onclick="toggleMobileNavigation()">CONSULTING</a>
+          <a href="#contact" onclick="toggleMobileNavigation()">CONTACT</a>
+          <a href="pblofinalpage2-a.html" onclick="toggleMobileNavigation()">WORKOUT PLAN</a>
+          <a href="pblofinal3.html" onclick="toggleMobileNavigation()">GYM LOCATE </a>
+        </div>
+      </nav>
+    </section>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #fff;
+        }
+      /* Add your CSS styles here */
+      .faq {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+        }
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .question:hover {
+            background-color: #555;
+        }
+        .answer {
+            margin-left: 0;
+            padding: 10px;
+            border-left: 3px solid #4CAF50;
+        }
+  </style>
+</head>
+<body>
+
+  <h1>FitLocate - Frequently Asked Questions</h1>
+
+  <div class="faq">
+      <div class="question" onclick="toggleAnswer('answer1')">What is FitLocate?</div>
+      <div class="answer" id="answer1">
+          <p>FitLocate is a fitness app designed to help you find nearby gyms, fitness centers, yoga studios, and other fitness-related facilities.</p>
+      </div>
+  
+      <div class="question" onclick="toggleAnswer('answer2')">How can I use FitLocate?</div>
+      <div class="answer" id="answer2">
+          <p>You can download the FitLocate app from your device's app store, create an account, and start searching for fitness facilities in your area.</p>
+      </div>
+  
+      <div class="question" onclick="toggleAnswer('answer3')">Is FitLocate free to use?</div>
+      <div class="answer" id="answer3">
+          <p>Yes, FitLocate is free to download and use. However, some features may require a premium subscription.</p>
+      </div>
+      <div class="question" onclick="toggleAnswer('answer4')">Does FitLocate have a web version?</div>
+    <div class="answer" id="answer4">
+        <p>Currently, FitLocate is only available as a mobile app. However, we may consider developing a web version in the future.</p>
+    </div>
+
+    <div class="question" onclick="toggleAnswer('answer5')">Can I book fitness classes through FitLocate?</div>
+    <div class="answer" id="answer5">
+        <p>Yes, FitLocate allows you to book fitness classes at participating facilities directly through the app.</p>
+    </div>
+
+    <div class="question" onclick="toggleAnswer('answer6')">Is FitLocate available worldwide?</div>
+    <div class="answer" id="answer6">
+        <p>FitLocate is currently available in select countries. We are working to expand our coverage to more regions in the future.</p>
+    </div>
+
+    <div class="question" onclick="toggleAnswer('answer7')">Can I review fitness facilities on FitLocate?</div>
+    <div class="answer" id="answer7">
+        <p>Yes, FitLocate allows users to leave reviews and ratings for fitness facilities they have visited.</p>
+    </div>
+
+    <div class="question" onclick="toggleAnswer('answer8')">Does FitLocate offer discounts for memberships?</div>
+    <div class="answer" id="answer8">
+        <p>Some fitness facilities listed on FitLocate may offer special discounts or promotions for app users. Be sure to check the details of each facility for any available discounts.</p>
+    </div>
+
+    <div class="question" onclick="toggleAnswer('answer9')">Is my personal information safe on FitLocate?</div>
+    <div class="answer" id="answer9">
+        <p>FitLocate takes user privacy and security seriously. We employ robust measures to protect your personal information and ensure it is not shared with third parties without your consent.</p>
+    </div>
+
+    <div class="question" onclick="toggleAnswer('answer10')">Can I search for specific fitness classes on FitLocate?</div>
+    <div class="answer" id="answer10">
+        <p>Yes, FitLocate allows you to search for specific types of fitness classes, such as yoga, spinning, or HIIT, to find facilities that offer those classes near you.</p>
+    </div>
+
+    
+
+  </div>
+  <section class="w3-container footer" style="text-align: end; padding: 20px;">
+    <p class="w3-center logo" style="font-size: 1.2em;">© 2024 - FitLocate, PUNE - All rights reserved</p>
+  </section>
+  
+<script>
+  function toggleAnswer(answerId) {
+      var answer = document.getElementById(answerId);
+      if (answer.style.display === "none") {
+          answer.style.display = "block";
+      } else {
+          answer.style.display = "none";
+      }
+  }
+</script>
+
+</body>
+</html>

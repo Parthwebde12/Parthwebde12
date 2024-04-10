@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Workout Plan</title>
+  <link rel="stylesheet" href="pbl0final.css">
+</head>
+<style>
+  .mobile-button{color: white;}
+  /* Styling for the pages */
+  .page {
+    display: none;
+    background-color: rgb(30, 29, 30); /* Initially hide all pages */
+  }
+
+  /* Styling for active page */
+  .page.active {
+    display: block;
+    background-color: rgb(44, 43, 44); /* Show active page */
+  }
+  /* Styling for the navigation bar */
+/* Styling for the navigation bar */
+nav {
+  text-align: center;
+  background-color: #333; /* Dark background */
+  padding: 15px 0; /* Add some vertical padding */
+}
+
+/* Style for the unordered list */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style for list items */
+nav ul li {
+  display: inline-block; /* Use inline-block for list items */
+  margin-right: 10px;
+}
+
+/* Style for the buttons */
+nav ul li a {
+  text-decoration: none;
+  padding: 15px 30px; /* Increased padding for a more realistic look */
+  background-color: #000; /* Black background */
+  color: white;
+  border: 2px solid #000; /* Black border */
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform, background-color, and box-shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+/* Enlarge buttons and change background color on hover */
+nav ul li a:hover {
+  transform: scale(1.05); /* Enlarge by 5% on hover */
+  background-color: #333; /* Darker black on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); /* Increase shadow on hover for depth */
+}
+
+/* Style for active button */
+nav ul li a.active {
+  background-color: #333; /* Darker black for active button */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase shadow for active button */
+}
+
+
+.video-container {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-bottom: 20px;
+  padding-bottom: 20px; /* Increased padding for better spacing */
+  scrollbar-width: thin;
+  scrollbar-color: rgb(0, 0, 0) #f0f0f0;
+  border-radius: 15px; /* Rounded corners for container */
+  background-color: #f9f9f9; /* Light background color */
+}
+
+/* Track */
+.video-container::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+/* Handle */
+.video-container::-webkit-scrollbar-thumb {
+  background-color: purple;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.video-container::-webkit-scrollbar-thumb:hover {
+  background-color: #6a0dad;
+}
+
+.video-iframe {
+  display: inline-block;
+  margin-right: 20px; /* Increased margin for better separation */
+  margin-bottom: 20px; /* Added margin bottom to create space between rows */
+  border-radius: 15px; /* Rounded corners for videos */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Increased shadow */
+  transition: transform 0.3s ease;
+  width: 45%; /* Set width to 45% for two videos in each row */
+  max-width: 500px; /* Set max-width for responsiveness */
+  flex: 1 0 auto; /* Allow videos to shrink if necessary */
+}
+
+.video-iframe:hover {
+  transform: scale(1.05); /* Slightly increase hover scaling */
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    background-color: #ffffff; /* White background on smaller screens */
+  }
+
+  .video-iframe {
+    margin-right: 10px; /* Adjusted margin for smaller screens */
+    width: 70%; /* Adjusted width for smaller screens */
+    max-width: none; /* Remove max-width for smaller screens */
+  }
+}
+
+
+
+</style>
+
+<body>
+ 
+  <section class="navigation w3-metro-light-blue w3-container" >
+    <button onclick="goToTop()" id="back-to-top" title="Go to top"><i class="fa fa-toggle-up"></i></button>
+    <nav class="nav-container">
+      <div class="logo w3-padding-large">
+        <img class="small-image" src="newlpogo.jpg.png" >
+      </div>
+
+
+      <div class="mobile-button"  style="color: white;">
+        <span style="float: right;" onclick="toggleMobileNavigation()">&#9776;</span>
+      </div>
+      <div class="links">
+
+        <a href="pbl0ofinal.html" style="color: white;"> MAIN PAGE</a>
+        <a href="pblofinalpage2-a.html" style="color: white;" >WORKOUT PLAN-</a>
+        <a href="pblofinal3.html" style="color: white;">GYMLOCATE-</a>
+        <a href="pblofinalpage4.html" style="color: white;"> MADE BY</a>
+
+      </div>
+
+      <div id="mobile-sidenav" class="mobile-links w3-sand">
+        <a href="javascript:void(0)" class="closebtn w3-round" onclick="toggleMobileNavigation()">&times;</a>
+        <a href="#about" onclick="toggleMobileNavigation()">ABOUT</a>
+        <a href="#consulting" onclick="toggleMobileNavigation()">CONSULTING</a>
+        <a href="#contact" onclick="toggleMobileNavigation()">CONTACT</a>
+        <a href="pblofinalpage2-a.html" onclick="toggleMobileNavigation()">WORKOUT PLAN</a>
+        <a href="pblofinal3.html" onclick="toggleMobileNavigation()">GYM LOCATE </a>
+      </div>
+    </nav>
+  </section>
+  <div class="hero w3-padding-large w3-container" style="background-color: hsla(194, 100%, 20%, 0.059); position: relative; color: white;">
+    <h1 style="font-size: 4rem; text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: rgb(0, 0, 0); text-indent: 3px; text-transform: uppercase; text-size-adjust: 3px; letter-spacing: 2px; text-decoration: underline; font-weight: bold;">Gym Workout Plan</h1>
+  </div>
+  <section style="background-color: #0e015a;">
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showPage('page1')"> 1</a></li>
+        <li><a href="#" onclick="showPage('page2')"> 2</a></li>
+        <li><a href="#" onclick="showPage('page3')"> 3</a></li>
+        <li><a href="#" onclick="showPage('page4')"> 4</a></li>
+        <li><a href="#" onclick="showPage('Diet Plan')">Diet Plan</a></li>
+        <li><a href="#" onclick="showPage('Videopage')">YT video</a></li>
+      </ul>
+    </nav>
+  
+  
+<div id="page1" class="page active">
+  <section style="text-align: center; display: block;">
+    <img src="helios-workout-intro.jpg"><img src="basilisk-workout-intro.jpg">
+    <img src="hummingbird-workout-intro.jpg"><img src="damsel-workout-intro.jpg">
+    <img src="helios-workout-intro.jpg"><img src="basilisk-workout-intro.jpg">
+    <img src="monk-workout-intro.jpg">
+  </section>
+  </div>
+  
+
+
+<div id="page2" class="page">
+<section style="display:block;text-align: center;">
+<img src="legs-of-steel-workout-intro.jpg"><img src="homemade-back-workout-intro.jpg"><img src="fire-and-fury-workout-intro.jpg"><img src="monster-legs-workout-intro.jpg">
+<img src="spartan-mode-workout-intro.jpg"><img src="art-of-combat-workout-intro.jpg"><img src="fire-and-fury-workout-intro.jpg">
+</section>
+</div>
+
+<div id="page3" class="page">
+<section style="display: block; text-align: center;">
+<img src="w2..jpg"><img src="w2..jpg"><img src="w3.jpg"><img src="w4.jpg"><img src="w5.jpg"><img src="w6.jpg"><img src="w6.jpg"><img src="w7.jpg"><img src="w8.jpg"></section>
+</div>
+
+
+<div id="page4" class="page">
+
+</div>
+
+<div id="Diet Plan" class="page">
+
+    <img src="Days-1536x864.webp">
+  
+</div>
+<div id="Videopage" class="page">
+  <div class="video-container">
+    <iframe class="video-iframe" width="560" height="300" src="https://www.youtube.com/embed/AzV3EA-1-yM?si=L90DveXLD6gQhKiT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe class="video-iframe" width="560" height="300" src="https://www.youtube.com/embed/7KSNmziMqog?si=NTMvgT2HM1dWlfTH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe class="video-iframe" width="560" height="300" src="https://www.youtube.com/embed/U9ENCvFf9yQ?si=q2XVKQ8o_HYacIOL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe class="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/04kAfDdqEfg?si=s6oOD4QY1qh9ohib" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe class="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/51VupvTTSno?si=WvLAdYdZQqGtQeWF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe class="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/AzV3EA-1-yM?si=Fd8FDaklDr5M_TTA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe class="video-iframe" width="560" height="315" src="https://www.youtube.com/embed/lvk2PMsuS88?si=0Q5nHHFrEQg77TgT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  
+</div>
+
+<section style="background-color: #0e015a;">
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showPage('page1')"> 1</a></li>
+      <li><a href="#" onclick="showPage('page2')"> 2</a></li>
+      <li><a href="#" onclick="showPage('page3')"> 3</a></li>
+      <li><a href="#" onclick="showPage('page4')"> 4</a></li>
+      <li><a href="#" onclick="showPage('Diet Plan')">Diet Plan</a></li>
+      <li><a href="#" onclick="showPage('Videopage')">YT video</a></li>
+    </ul>
+  </nav>
+
+<section class="w3-container footer" style="text-align: end; padding: 20px;">
+  <p class="w3-center logo" style="font-size: 1.2em;">© 2024 - FitLocate, PUNE - All rights reserved</p>
+</section>
+
+
+<script async>
+  const backToTop = document.getElementById("back-to-top");
+
+  function toggleMobileNavigation() {
+    const mobileNavigation = document.getElementById("mobile-sidenav");
+    mobileNavigation.classList.toggle('mobile-links-active');
+  }
+
+  function goToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  function scroll() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) backToTop.style.display = "block";
+    else backToTop.style.display = "none";
+  }
+
+  window.onscroll = function () { scroll() };
+</script>
+<script>
+  // JavaScript function to switch between pages
+  function showPage(pageId) {
+    // Hide all pages
+    var pages = document.getElementsByClassName("page");
+    for (var i = 0; i < pages.length; i++) {
+      pages[i].classList.remove("active");
+    }
+    
+    // Show the selected page
+    var pageToShow = document.getElementById(pageId);
+    pageToShow.classList.add("active");
+  }
+</script>

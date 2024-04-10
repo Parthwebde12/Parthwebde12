@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    :root {
+      --title-span-color: rgb(129, 24, 24);
+
+      --font-medium: 1em;
+      --font-medium-large: 1.25em;
+      --font-large: 1.5rem;
+      --font-x-large: 2rem;
+      --font-2x-large: 3rem;
+      --font-3x-large: 3.5rem;
+
+      --transition-fast: 0.2s;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size: medium;
+      font-style: var(--font-medium);
+      letter-spacing: 3px;
+    background: rgb(208, 204, 204);
+        
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 60%;
+      margin: 0 auto;
+     
+    }
+
+    #back-to-top {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 24px;
+      border: none;
+      background: #1c0028;
+      color: white;
+      cursor: pointer;
+      padding: 15px 20px;
+      border-radius: 50%;
+    }
+
+
+    .navigation {
+      width: 100%;
+      height: 80px;
+      -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+      text-transform: uppercase;
+      text-decoration: dotted;
+      text-shadow: #f2ebeb;
+      
+    }
+
+    .nav-container {
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      color: white
+     ; background-color: hwb(60 19% 80%);
+    }
+
+    .nav-container .links {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .nav-container .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-container .links a,
+    .nav-container .logo a {
+      text-decoration: none;
+      transition: var(--transition-fast);
+      font-family: "Roboto", sans-serif;
+    }
+
+    .nav-container .links a {
+      font-size: var(--font-medium);
+    }
+
+    .nav-container .logo p {
+      font-size: var(--font-large);
+    }
+
+    .nav-container .links a:hover,
+    .nav-container .logo p:hover {
+      font-size: var(--font-large);
+    }
+
+    .mobile-button {
+      display: none;
+    }
+
+    .mobile-links {
+      background: #485563;
+      background-color: #2e2b2b;
+      height: 100%;
+      width: 0;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+      transition: var(--transition-fast);
+      padding-top: 20px;
+    }
+
+    .mobile-links a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      display: block;
+      transition: 0.3s;
+      text-align: center;
+      color: rgb(0, 0, 0);
+    }
+
+    .mobile-links .closebtn {
+      font-size: var(--font-2x-large);
+      color: rgb(3, 4, 3);
+      padding: 0;
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-right: 20px;
+      margin-top: 20px;
+      border: 5px solid rgb(4, 10, 6);
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+
+
+    .hero h1 {
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      
+      font-size: var(--font-x-large);
+      font-weight: bold;
+      color: rgba(255, 244, 244, 0.98);
+    }
+
+    .hero i {
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-weight: bolder;
+      font-size: var(--font-x-large) !important;
+      color:white;
+    }
+
+    .hero p {
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      font-weight: bolder;
+      font-size: var(--font-x-large);
+      font-weight: bold;
+      color: rgb(250, 250, 250);
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      min-height: 300px;
+      height: 800px;
+      background: #bf0202;
+      background: -webkit-linear-gradient(to right, #1a0145, #2b2a2c);
+      background: linear-gradient(to right, #38363a, #3b393c);
+    }
+    .bgmg1
+    { background-position: center;
+      background-size: cover;
+      background-image:url(pexels-victor-freitas-949129.jpg);
+      min-height: 100% ; opacity: cal(50%)
+      ;}
+
+    .hero a {
+      border: 3px double rgb(244, 244, 244);
+      text-decoration: none;
+      color: rgb(246, 245, 245);
+      transition:var(--font-x-large);
+    }
+
+    .hero a:hover {
+      background-color: rgba(39, 0, 83, 0.7);
+      color: black;
+    }
+
+
+    .about {
+      width: 100%;
+      min-height: 300px;
+      background-color: -webkit-linear-gradient(to right, #1a0145, #424341);
+    }
+
+    .content {
+      padding: 50px;
+      -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .content h3 {
+      margin-top: 30px !important;
+    }
+
+    .content p {
+      margin-top: 15px !important;
+    }
+
+    .leadership {
+      margin-top: 50px;
+    }
+
+    .leadership.content h3 {
+      margin-top: 0 !important;
+    }
+
+    .l-cards {
+      display: flex;
+    }
+
+    .icons {
+      font-size: var(--font-x-large);
+    }
+
+    .l-card {
+      width: 50%;
+      margin-top: 50px !important;
+      padding-left: 25px;
+      padding-right: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .circular-portrait {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 50%;
+    }
+
+    .circular-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+
+    .testimonials {
+      min-height: 300px;
+      height: auto;
+      background: #485563;
+      background: #343131;
+      color: white;
+      
+    }
+
+    .testimonials h2 {
+      color: white;
+    }
+
+
+    .slideshow-container {
+      position: relative;
+      background: #f6f6f6;
+      color: #000000;
+    }
+
+
+    .mySlides {
+      display: none;
+      padding: 80px;
+      text-align: center;
+    }
+
+    .mySlides p {
+      width: 50%;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -30px;
+      padding: 16px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+
+    .next {
+      position: absolute;
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+
+    .dot-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: rgba(153, 255, 187, 0.2);
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+
+    .active,
+    .dot:hover {
+      background-color: rgba(153, 255, 187, 1);
+    }
+
+
+    .consulting.content {
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+    }
+
+    .c-card {
+      min-height: 100px;
+      width: 70%;
+      float: left;
+      -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-medium-large);
+      padding: 15px;
+    }
+
+    .c-card p {
+      text-align: center;
+    }
+
+    .c-card-right {
+      float: right;
+    }
+
+    .why-us {
+      min-height: 300px;
+      height: auto;
+      background-color: #343131;
+      color: #000000;
+    }
+
+    .why-us h2 {
+      color: white;
+    }
+
+    .why-us .container {
+      width: 40%;
+    }
+
+    .boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .box {
+      flex: 35%;
+      min-height: 100px;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: var(--font-large);
+      padding: 15px;
+    }
+
+    .timer {
+      font-size: 90px;
+      text-align: center;
+      color: rgb(240, 240, 240);
+    }
+
+
+    .contact {
+      min-height: 400px;
+      display: flex;
+      justify-content: center;
+      padding: 50px;
+    }
+
+    .contact form {
+      background: #000000;
+      background-color: #353131;
+    }
+
+    .contact .form .container {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    .contact span {
+      color: var(--title-span-color);
+    }
+
+    .contact .form .container form {
+      width: 80%;
+    }
+
+    .contact .short-contact {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      min-height: 400px;
+    }
+
+    .contact .form input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    .contact .form input[type="submit"] {
+      border: 3px solid rgb(153, 255, 187);
+      text-decoration: none;
+      color: rgb(153, 255, 187);
+      transition: var(--transition-fast);
+      background-color: transparent;
+      padding: 10px 25px;
+    }
+
+    .contact .form input[type="submit"]:hover {
+      background-color: rgba(153, 255, 187, 0.7);
+      color: black;
+    }
+
+
+    .footer {
+      min-height: 80px;
+      background: #000000;
+      background:  hwb(60 19% 80%);
+    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgb(255, 255, 255);
+    }
+
+    @media screen and (max-width: 1200px) {
+      .container {
+        width: 80%;
+      }
+
+      .contact.container {
+        width: 80%;
+      }
+
+      .contact .short-contact h2 {
+        width: 100%;
+      }
+
+      .why-us .container {
+        width: 60%;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      .nav-container {
+        width: 100%;
+      }
+
+      .container {
+        width: 90%;
+      }
+
+      .nav-container .links {
+        display: none;
+      }
+
+      .mobile-button {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      .mobile-button span {
+        font-size: var(--font-x-large);
+      }
+
+      .mobile-links-active {
+        width: 100%;
+      }
+
+      .hero h1,
+      .hero p {
+        text-align: center;
+      }
+
+      .c-card {
+        width: 90%;
+      }
+
+      .mySlides {
+        padding: 50px !important;
+      }
+
+      .mySlides p {
+        width: 60%;
+      }
+
+      .box {
+        flex: 45%;
+        font-size: var(--font-medium-large);
+        min-height: 0;
+        height: auto;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+
+      .content.container,
+      .leadership-content.container {
+        width: 100%;
+      }
+
+      .container {
+        width: 80%;
+      }
+
+      .l-cards {
+        flex-direction: column;
+      }
+
+      .l-card {
+        width: 100%;
+      }
+
+      .c-card {
+        width: 100%;
+        float: none;
+      }
+
+      .c-card-right {
+        float: none;
+      }
+
+
+      .mySlides {
+        padding: 30px !important;
+      }
+
+      .mySlides p {
+        width: 70%;
+      }
+
+      .testimonials {
+        padding: 15px !important;
+      }
+
+      .contact {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .contact .short-contact {
+        width: 100%;
+        min-height: 0;
+        justify-content: center;
+      }
+
+      .contact .short-contact h2 {
+        width: fit-content;
+      }
+
+      .contact .container {
+        width: 90%;
+      }
+
+      .contact .form .container form {
+        width: 100%;
+      }
+
+      .why-us .container {
+        width: 80%;
+      }
+
+      .box {
+        flex: 100%;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+
+      html,
+      body {
+        overflow-x: none;
+      }
+
+      #back-to-top {
+        display: none !important;
+      }
+
+      .navigation {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        background: rgba(252, 252, 252, 1) !important;
+      }
+
+      .mobile-links .closebtn {
+        margin-right: 0;
+      }
+
+      .hero {
+        min-height: 400px;
+        height: auto;
+      }
+
+      .hero h1 {
+        font-size: var(--font-x-large);
+      }
+
+      .hero p {
+        font-size: var(--font-medium);
+      }
+
+      .testimonials {
+        padding: 0 !important;
+      }
+
+      .mySlides {
+        font-size: 0.85rem;
+      }
+
+      .mySlides p {
+        width: 70%;
+      }
+
+      .content {
+        padding: 10px;
+        box-shadow: none;
+        border: none;
+      }
+
+      .l-card {
+        padding: 0;
+      }
+
+      .contact {
+        padding: 10px;
+      }
+
+      .contact p {
+        font-size: var(--font-medium-large) !important;
+      }
+
+      .contact .container {
+        width: 100%;
+      }
+
+      .why-us .container {
+        width: 100%;
+      }
+
+      .box {
+        font-size: var(--font-medium);
+      }
+    }
+
+    .iframe-container {
+      width: 100%;
+      height: 500px;
+      margin-bottom: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+    .small-image{ width: 120px;; height: auto;}
+   
+    .highlight {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff; /* Change this to your preferred color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a shadow for better visibility */
+    margin-top: 20px; /* Adjust margin as needed */}
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>FitLocate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-highway.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+  </section>
+  <section class="navigation black w3-container">
+    <button onclick="goToTop()" id="back-to-top" title="Go to top"><i class="fa fa-toggle-up"></i></button>
+    <nav class="nav-container">
+      <div class="logo w3-padding-large">
+       <img class="small-image" src="newlpogo.jpg.png" style="background-color: #302d2d;">
+      </div>
+
+
+      <div class="mobile-button">
+        <span style="float: right;" onclick="toggleMobileNavigation()">&#9776;</span>
+      </div>
+      <div class="links">
+
+        <a href="#about">ABOUT</a>-
+        <a href="4th.html">CONSULTING</a>-
+        <a href="index.html">BOOK ONLINE-</a>
+        <a href="pblofinalpage2-a.html">WORKOUT PLAN-</a>
+        <a href="pblofinal3.html">GYM LOCATE-</a>
+        <a href="3rd.html"> MADE BY</a>
+
+      </div>
+
+      <div id="mobile-sidenav" class="mobile-links w3-sand">
+        <a href="javascript:void(0)" class="closebtn w3-round" onclick="toggleMobileNavigation()">&times;</a>
+        <a href="#about" onclick="toggleMobileNavigation()">ABOUT</a>
+        <a href="#consulting" onclick="toggleMobileNavigation()">CONSULTING</a>
+        <a href="#contact" onclick="toggleMobileNavigation()">CONTACT</a>
+        <a href="pblofinalpage2-a.html" onclick="toggleMobileNavigation()">WORKOUT PLAN</a>
+        <a href="pblofinal3.html" onclick="toggleMobileNavigation()">GYM LOCATE </a>
+        
+      </div>
+    </nav>
+    
+  </section>
+
+  <section class="hero w3-padding-large w3-container bgmg1"> 
+    <h1 style="display: inline;"><span><i class="fa fa-check-square-o"></i></span> "Find your fit, one location at a time, with FitLocate."</h1>
+    <p class="highlight">"Precision meets progress: Unlock accurate gym information in your locality with FitLocate."</p>
+    <a href="index.html" class="w3-padding-large w3-round">Book in Any Gym with us.</a>
+  </section>
+
+ 
+  <section class="about w3-padding-large w3-container" id="about">
+    <div class="content container w3-round-large" style=" color: white; background-color:#272427; text-align: center;">
+      <h2 style="text-align: center;">- Our Mission -</h2>
+      <p style="text-align: center;">"Fitlocate is a fitness app designed to help users discover nearby gyms, fitness centers
+        , and wellness facilities. With its user-friendly interface, it allows users to explore various fitness options based on location,
+         preferences, and amenities. Fitlocate enables users to easily find and book classes, trainers, and facilities, making it convenient
+          for individuals to stay active and healthy in their local area. 
+        Additionally, the app provides reviews and ratings to assist users in making informed decisions about their fitness choices.."</p>
+      <h3 style="text-align: center;">- About -</h3>
+      <p>Fit Locate is a robust fitness application designed to streamline the process of finding and accessing fitness resources. 
+        It offers a diverse range of options, from yoga studios to CrossFit gyms, allowing users to discover activities that align
+         with their interests and goals. The platform's advanced search functionality enables users to filter results by factors such as
+          location, price, and available equipment, ensuring a tailored fitness experience. Fit Locate also fosters community engagemen
+          t
+           through social features, such as the ability to connect with fellow fitness enthusiasts and share experiences. With its user-
+           friendly interface and comprehensive features, Fit Locate
+         serves as a valuable tool for individuals looking to maintain an active and healthy lifestyle.Through its 
+         intuitive interface, Fit Locate enables individuals to efficiently locate nearby gyms, fitness centers, and
+          wellness establishments. Users can explore a variety of fitness offerings, including classes, trainers, and
+           amenities, all curated based on their preferences and location. With features like booking capabilities and 
+           user reviews, Fit Locate facilitates informed decision-making, empowering individuals to pursue their fitness
+            goals conveniently and effectively.
+
+
+
+
+         .</p>
+    </div>
+
+    <div class="leadership content container w3-margin-top w3-round-large" style="background-color: #272427; color: white; text-align: center;">
+      <h3 style="text-align: center;">- Leadership -</h3>
+      <p style="text-align: center;"><em>"The resistance that you fight physically in the gym and the resistance that
+          you
+          fight in life can only build a strong character."</em> <strong>- Arnold Schwarzenegger, A legend</strong></p>
+      <div class="l-cards">
+        <div class="l-card">
+          <div class="circular-portrait">
+            <img src="ceo.jpg" alt="Photo by PARTH" />
+          </div>
+          <h4><strong>ABHISHEK RATHORE</strong></h4>
+          <p style="margin-top: 0 !important;">Founder & Owner</p>
+          <div class="icons">
+            <a href="" target="_blank"><span><i class="fa fa-facebook-square"></i></a>
+            <a href="" target="_blank"><span><i class="fa fa-linkedin-square"></i></a>
+            <a href="" target="_blank"><span><i class="fa fa-address-card"></i></a>
+          </div>
+          <p>"Commitment to excellence fuels our journey. With passion and perseverance, we sculpt dreams into reality.
+            Together, we redefine fitness, empower lives, and inspire greatness. Welcome to our world of
+            transformation."</p>
+
+        </div>
+        <div class="l-card">
+          <div class="circular-portrait">
+            <img src="trainer.jpg"alt="Photo by PARTH" />
+          </div>
+          <h4><strong>SURAJMAL SINGH RATHORE</strong></h4>
+          <p style="margin-top: 0 !important;">TRAINER</p>
+          <div class="icons">
+            <a href="" target="_blank"><span><i class="fa fa-facebook-square"></i></a>
+            <a href="" target="_blank"><span><i class="fa fa-linkedin-square"></i></a>
+            <a href="" target="_blank"><span><i class="fa fa-address-card"></i></a>
+          </div>
+          <p>"Embrace the challenge. Elevate your potential. Every rep, every set, a step closer to greatness. Join us
+            in the pursuit of strength, health, and unstoppable determination."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="testimonials w3-container w3-panel bgmg1" style="padding: 50px;">
+    <h2 style="text-align: center;">- Some of our customer stories -</h2>
+    <div class="slideshow-container">
+
+      <div class="mySlides">
+        <p><q><em>"FitLocate has truly transformed my life. From the moment I walked through the doors, I
+              felt welcomed
+              by the friendly staff and motivated by the energetic atmosphere. The state-of-the-art
+              facilities and top-notch equipment provide everything I need to push my limits and achieve my fitness
+              goals..</em></q></p>
+        <p class="author"><strong>~Ahishek Verma,20 yrs old</strong></p>
+      </div>
+
+      <div class="mySlides">
+        <p><q><em>But what I appreciate most about FitLocate is the sense of community.
+              The members here are like family, always cheering each other on and celebrating victories together.
+              Whether it's sharing tips, offering
+              encouragement, or simply sharing a smile, the camaraderie at FitLocate makes every workout
+              enjoyable.</em></q></p>
+        <p class="author"><strong>~Raivndra kaushik ,38 yrs old</strong></p>
+      </div>
+
+      <div class="mySlides">
+        <p><q><em>Thanks to FitLocate, I've not only transformed my body but also gained confidence,
+              strength, and a
+              newfound passion for fitness. I couldn't be happier with my decision to join this incredible gym, and I
+              look forward to
+              continuing my fitness journey with the support of this amazing community."
+
+            </em></q></p>
+        <p class="author"><strong>~ Ajit Doval,78 yrs old</strong></p>
+      </div>
+
+      <div class="mySlides">
+        <p><q><em>But what I appreciate most about FitLocate is the sense of community. The members here
+              are like family, always cheering each other on and celebrating victories together. Whether it's sharing
+              tips, offering encouragement, or simply sharing
+              a smile, the camaraderie at FitLocate
+              makes every workout enjoyable. </em></q></p>
+        <p class="author"><strong>~ Ravina Tandon,26 yrs old</strong></p>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </section>
+
+  <section id="consulting" class="w3-container container consulting content">
+    <h2 style="text-align: center;"><strong>~ What we do ~</strong></h2>
+    <div class="c-card w3-margin-top" style="background-color:#272427; color: white;">
+      <p><strong>Training:</strong> Our certified personal trainers provide one-on-one coaching and personalized
+        workout plans tailored to your specific goals, whether you're
+        looking to lose weight, build muscle, improve endurance, or enhance overall fitness.</p>
+    </div>
+    <div class="c-card c-card-right w3-margin-top " style="background-color: #272427; color: white;">
+      <p><strong> Fitness Classes:</strong> We offer a variety of group fitness classes led by experienced
+        instructors, including yoga, pilates, spinning, HIIT (High-Intensity Interval Training), Zumba, and more.
+        These classes provide a fun and motivating environment to challenge yourself and connect with others.</p>
+    </div>
+    <div class="c-card w3-margin-top"style="background-color:#272427; color: white;">
+      <p><strong> Equipment:</strong> Our Member gym is equipped with a wide range of cardio machines, including treadmills,
+        elliptical trainers, stationary bikes,
+        rowing machines, and stair climbers, to help you improve cardiovascular health, burn calories, and increase
+        endurance.</p>
+    </div>
+    <div class="c-card  c-card-right w3-margin-top"style="background-color:#272427; color: white;">
+      <p><strong> Training:</strong> We provide a fully equipped strength training area with free weights, weight
+        machines, and functional
+        training equipment to help you build muscle, increase strength, and improve overall body composition.</p>
+    </div>
+    <div class="c-card w3-margin-top"style="background-color: #272427; color: white;">
+      <p><strong> Counseling:</strong> Our nutrition experts offer personalized guidance and support to help you develop
+        healthy eating habits,
+        make better food choices, and achieve your weight loss or fitness goals through proper nutrition.</p>
+    </div>
+    <div class="c-card  c-card-right w3-margin-top"style="background-color:#272427; color: white;">
+      <p><strong> Rooms and Amenities:</strong> Our facility includes clean and spacious locker rooms
+        with showers, saunas, and amenities to provide you with a comfortable and
+        convenient experience before and after your workout. </p>
+    </div>
+  </section>
+
+  <section class="w3-panel w3-container content why-us" style="padding: 50px;">
+    <h2 style="text-align: center;">- Why choose our Member Gym? -</h2>
+    <div class="container boxes">
+      <div class="box w3-round-large">
+        Expert trainers, personalized plans.
+
+      </div>
+      <div class="box w3-round-large">
+        Modern Day equipment with Cutting edge technology.
+      </div>
+      <div class="box w3-round-large">
+        We provide safety assaurance in our gym.
+      </div>
+      <div class="box w3-round-large">
+        10 of our customers are in Body-Building Competition by Pune Muncipal Corporation
+      </div>
+      <div class="box w3-round-large" style="background-color: rgb(255, 255, 255);">
+        Won best gym in PUNE Award by PMC.
+      </div>
+    </div>
+  </section>
+
+  <section class="contact w3-container contact bgmg1" id="contact">
+    <div class="short-contact" style="color: white;">
+      <h2>- Our contact info - </h2>
+      <div class="w3-large contact-info">
+        <i class="fa fa-address-card"></i><span style="margin-left:10px;"><a
+            href="https://www.google.com/maps/place/@40.6976637,-74.119762,11z/data=!3m1!4b1!4m5!3m4!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62!8m2!3d40.7127753!4d-74.0059728"
+            target="_blank">Ajeenkya DY Patil Road ,Lohegaon, PUNE</a></span><br>
+        <i class="fa fa-envelope"></i><span style="margin-left:10px;"><a
+            href="connect@factor.com">peakperformance@gmail.com</a></span><br>
+        <i class="fa fa-phone-square"></i><span style="margin-left:10px;"><a href="+44 0197532486">+91
+            87283283321</a></span><br>
+      </div>
+    </div>
+      <h3 class="w3-margin-top">- Follow us on </h3>
+      <div class="w3-large contact-info" style="color: white;">
+        <i class="fa fa-linkedin-square"></i><span style="margin-left:10px;"><a href="#" target="_blank"
+            style="text-decoration: none;">- LinkedIn</a></span><br>
+        <i class="fa fa-facebook-square"></i><span style="margin-left:10px;"><a href="#" target="_blank"
+            style="text-decoration: none;">- Facebook</a></span><br>
+        <i class="fa fa-twitter-square"></i><span style="margin-left:10px;"><a href="#" target="_blank"
+            style="text-decoration: none;">- Twitter</a></span><br>
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="w3-container footer">
+    <p class="w3-center logo">© 2024 -Fitlocate,PUNE - All rights reserved</p>
+  </section>
+
+
+  <script async>
+    const backToTop = document.getElementById("back-to-top");
+
+    function toggleMobileNavigation() {
+      const mobileNavigation = document.getElementById("mobile-sidenav");
+      mobileNavigation.classList.toggle('mobile-links-active');
+    }
+
+    function goToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
+    function scroll() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) backToTop.style.display = "block";
+      else backToTop.style.display = "none";
+    }
+
+    window.onscroll = function () { scroll() };
+  </script>
+  <script async>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+  </script>
+  <script>
+    document.getElementById('form w3-margin-top').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                
+            };
+
+            saveToExcel(formData);
+        });
+
+        function saveToExcel(formData) {
+            const csvContent = `Name,Email,Phone,Address,City,Country\n`
+                            + `${formData.name},${formData.email},${formData.phone},${formData.address},${formData.city},${formData.country}`;
+
+            const encodedUri = encodeURI(`data:text/csv;charset=utf-8,${csvContent}`);
+            const link = document.createElement('a');
+            link.setAttribute('href', encodedUri);
+            link.setAttribute('download', 'form_data.csv');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+  </script>
+</body>
+</html>
+
