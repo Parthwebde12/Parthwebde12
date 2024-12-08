@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hovering Icon with JavaScript</title>
+    <style>
+        .icon {
+            font-size: 50px;
+            color: #000;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hovered {
+            color: #007bff;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <i class="icon" id="hoverIcon">★</i> <!-- Replace ★ with any icon or Font Awesome -->
+    </div>
+
+    <script>
+        const icon = document.getElementById('hoverIcon');
+
+        // Adding the 'hovered' class when mouse enters the icon
+        icon.addEventListener('mouseenter', () => {
+            icon.classList.add('hovered');
+        });
+
+        // Removing the 'hovered' class when mouse leaves the icon
+        icon.addEventListener('mouseleave', () => {
+            icon.classList.remove('hovered');
+        });
+    </script>
+</body>
+</html>
